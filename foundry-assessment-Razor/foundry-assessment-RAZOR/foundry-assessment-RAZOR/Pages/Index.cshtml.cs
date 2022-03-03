@@ -7,10 +7,14 @@ namespace foundry_assessment_RAZOR.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        HttpClient client = new HttpClient();
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
+
+        public class Employee { }
 
         public void OnGet()
         {
