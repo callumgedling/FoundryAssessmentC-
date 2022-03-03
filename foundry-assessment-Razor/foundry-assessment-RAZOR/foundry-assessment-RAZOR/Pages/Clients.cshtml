@@ -1,0 +1,32 @@
+﻿@page
+@using foundry_assessment_RAZOR.Model;
+@using foundry_assessment_RAZOR.API;
+@model foundry_assessment_RAZOR.Pages.ClientsModel
+@{
+    ViewData["title"] = "Client Information";
+}
+
+<div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th style="width: 350px;">ID</th>
+                    <th style="width: 350px;">Name</th>
+                    <th> </th>
+                </tr>
+            </thead>
+        @{
+            List<ClientClass> clientList = new List<ClientClass>();
+            ClientAPI clientAPI = new ClientAPI();
+            clientList = clientAPI.ReadClients();
+            foreach (ClientClass client in clientList)
+            {
+                <tr>
+                <td>@client.id</td>
+                <td>@client.name</td>
+                </tr>
+            }
+        }
+        </table>
+
+    </div>

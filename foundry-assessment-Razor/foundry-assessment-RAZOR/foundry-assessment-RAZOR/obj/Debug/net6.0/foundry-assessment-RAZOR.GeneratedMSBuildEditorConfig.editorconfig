@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Callu\Source\Repos\foundry-assessment-starter\foundry-assessment-Razor\foundry-assessment-RAZOR\foundry-assessment-RAZOR
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Callu/Source/Repos/foundry-assessment-starter/foundry-assessment-Razor/foundry-assessment-RAZOR/foundry-assessment-RAZOR/Pages/Clients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Callu/Source/Repos/foundry-assessment-starter/foundry-assessment-Razor/foundry-assessment-RAZOR/foundry-assessment-RAZOR/Pages/Employees.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +37,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Callu/Source/Repos/foundry-assessment-starter/foundry-assessment-Razor/foundry-assessment-RAZOR/foundry-assessment-RAZOR/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Callu/Source/Repos/foundry-assessment-starter/foundry-assessment-Razor/foundry-assessment-RAZOR/foundry-assessment-RAZOR/Pages/test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Callu/Source/Repos/foundry-assessment-starter/foundry-assessment-Razor/foundry-assessment-RAZOR/foundry-assessment-RAZOR/Pages/_ViewImports.cshtml]

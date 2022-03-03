@@ -7,48 +7,44 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 using System.Net.Http.Headers;
-
 namespace foundry_assessment_RAZOR.API
 {
-    public class EmployeeAPI
+    public class ClientAPI
     {
         readonly string baseUrl = "http://localhost:3000";
         readonly string clientsURL = "/clients/";
-        readonly string employeesURL = "/employees/";
+        readonly string EmployeesURL = "/employees/";
         readonly string engagementsURL = "/engagements/";
 
-
-        public HttpStatusCode CreateEmployee(EmployeeName employeeName)
+        public HttpStatusCode CreateClient(ClientName clientName)
         {
             HttpClient httpClient = new HttpClient();
-            string jsonInput = JsonConvert.SerializeObject(employeeName);
+            string jsonInput = JsonConvert.SerializeObject(clientName);
             var content = new StringContent(jsonInput, Encoding.UTF8, "application/json");
-            var results = httpClient.PostAsync(baseUrl + employeesURL, content).Result;
+            var results = httpClient.PostAsync(baseUrl + clientsURL, content).Result;
             return results.StatusCode;
         }
 
-        public List<EmployeeClass> ReadEmployees()
+        public List<ClientClass> ReadClients()
         {
-            List<EmployeeClass> employeeList = new List<EmployeeClass>();
+            List<ClientClass> ClientsList = new List<ClientClass>();
             HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(baseUrl);
+            httpClient.BaseAddress = new Uri("http://localhost:3000/");
 
-            var consumeAPI = httpClient.GetAsync("employees");
+            var consumeAPI = httpClient.GetAsync("clients");
             consumeAPI.Wait();
 
             var readData = consumeAPI.Result;
             if (readData.IsSuccessStatusCode)
             {
                 var jsonString = readData.Content.ReadAsStringAsync();
-                employeeList = JsonConvert.DeserializeObject<List<EmployeeClass>>(jsonString.Result);
-                Console.WriteLine(employeeList);
+                ClientsList = JsonConvert.DeserializeObject<List<ClientClass>>(jsonString.Result);
+                Console.WriteLine(ClientsList);
             }
             consumeAPI.Dispose();
             httpClient.Dispose();
-            return employeeList;
+            return ClientsList;
         }
-
-
 
     }
 }
