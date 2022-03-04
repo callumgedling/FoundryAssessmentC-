@@ -23,7 +23,7 @@ namespace foundry_assessment_RAZOR.API
             HttpClient httpClient = new HttpClient();
             string jsonInput = JsonConvert.SerializeObject(employeeName);
             var content = new StringContent(jsonInput, Encoding.UTF8, "application/json");
-            var results = httpClient.PostAsync(baseUrl + employeesURL, content).Result;
+            var results = httpClient.PostAsync("http://localhost:3000/employees", content).Result;
             return results.StatusCode;
         }
 

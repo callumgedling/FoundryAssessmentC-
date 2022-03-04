@@ -8,6 +8,7 @@ namespace foundry_assessment_RAZOR.Pages
 {
     public class EmployeesModel : PageModel
     {
+        [BindProperty]
         public string NewEmployeeName { get; set; }
         public EmployeeName employeeName = new EmployeeName();
         public EmployeeAPI employeeAPI = new EmployeeAPI();
@@ -15,7 +16,7 @@ namespace foundry_assessment_RAZOR.Pages
         {
         }
 
-        public void onPost()
+        public void OnPost()
         {
             employeeName.name = NewEmployeeName;
             employeeAPI.CreateEmployee(employeeName);
