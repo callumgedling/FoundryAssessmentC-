@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qrFQUMM2KjAH1Iqox9OdkcZEFT8lmOA3587vldYDW6YJBYc8s+Xebt9XaAvn/MFjOARX+ygBWukon+OZoeEYBA==",
+  "dgSpecHash": "d8rM3hZCBlSaJMFPrEkv/nreRcInDoBWo/Ryi6IiCljVYWaQ8H+zZfv9AMSPvhab1jpzfZKjtXnRkCzhQS+oYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Callu\\Source\\Repos\\foundry-assessment-starter\\foundry-assessment-Razor\\foundry-assessment-RAZOR\\foundry-assessment-RAZOR\\foundry-assessment-RAZOR.csproj",
+  "projectFilePath": "C:\\Users\\Callu\\source\\repos\\foundry-assessment-starter\\foundry-assessment-Razor\\foundry-assessment-RAZOR\\foundry-assessment-RAZOR\\foundry-assessment-RAZOR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Callu\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Callu\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",

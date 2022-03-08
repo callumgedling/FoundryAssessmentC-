@@ -31,7 +31,11 @@
                     <tr>
                         <td>@employee.id</td>
                         <td>@employee.name</td>
-                    </tr>
+                    <td>
+                    <a asp-page="./Employee/Edit" asp-route-id="@employee.id">Edit</a> |
+                    <a asp-page="./Employee/Delete" asp-route-id="@employee.id">Delete</a>
+                </td>
+            </tr>
                 }
             }          
         </table>

@@ -47,8 +47,47 @@ namespace foundry_assessment_RAZOR.API
             httpClient.Dispose();
             return employeeList;
         }
+        public EmployeeClass FindEmployeeByID(string id)
+        {
+            EmployeeClass employee = new EmployeeClass();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(baseUrl);
 
+            var consumeAPI = httpClient.GetAsync("employees/" + id);
+            consumeAPI.Wait();
 
+            var readData = consumeAPI.Result;
+            if (readData.IsSuccessStatusCode)
+            {
+                var jsonString = readData.Content.ReadAsStringAsync();
+                employee = JsonConvert.DeserializeObject<EmployeeClass>(jsonString.Result);
+                Console.WriteLine(employee);
+            }
+            consumeAPI.Dispose();
+            httpClient.Dispose();
+            return employee;
+        }
+
+        public HttpStatusCode UpdateEmployee(EmployeeClass employee)
+        {
+            HttpClient httpClient = new HttpClient();
+            EmployeeName employeeName = new EmployeeName();
+            employeeName.name = employee.name;
+            string jsonInput = JsonConvert.SerializeObject(employeeName);
+            var content = new StringContent(jsonInput, Encoding.UTF8, "application/json");
+            var results = httpClient.PutAsync(baseUrl + employeesURL + employee.id, content).Result;
+            Console.WriteLine(results.StatusCode);
+            httpClient.Dispose();
+            return results.StatusCode;
+        }
+
+        public async Task<HttpStatusCode> DeleteEmployee(string employeeId)
+        {
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.DeleteAsync(baseUrl + employeesURL + employeeId);
+            httpClient.Dispose();
+            return response.StatusCode;
+        }
 
     }
 }

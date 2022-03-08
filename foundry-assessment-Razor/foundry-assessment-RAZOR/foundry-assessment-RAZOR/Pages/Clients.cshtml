@@ -2,11 +2,17 @@
 @using foundry_assessment_RAZOR.Model;
 @using foundry_assessment_RAZOR.API;
 @model foundry_assessment_RAZOR.Pages.ClientsModel
+
 @{
     ViewData["title"] = "Client Information";
 }
 
 <div>
+    <form method="post">
+        Client Name: <input type="text" asp-for="NewClientName" [BindProperty] />
+        <button type="submit">Add Client</button>
+    </form>
+
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -22,8 +28,12 @@
             foreach (ClientClass client in clientList)
             {
                 <tr>
-                <td>@client.id</td>
-                <td>@client.name</td>
+                    <td>@client.id</td>
+                    <td>@client.name</td>
+                 <td>
+                    <a asp-page="./Client/Edit" asp-route-id="@client.id">Edit</a> |
+                    <a asp-page="./Client/Delete" asp-route-id="@client.id">Delete</a>
+                </td>
                 </tr>
             }
         }

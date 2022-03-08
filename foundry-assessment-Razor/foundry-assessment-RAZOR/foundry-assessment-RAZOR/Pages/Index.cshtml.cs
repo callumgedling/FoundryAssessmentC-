@@ -14,7 +14,6 @@ namespace foundry_assessment_RAZOR.Pages
             _logger = logger;
         }
 
-        public class Employee { }
 
         public void OnGet()
         {
